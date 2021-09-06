@@ -26,9 +26,9 @@
       <p>The assigned agent is: {{ lead.agent }}</p>
     </div>
     <div>
-      <a href="/leads">Go back</a>
-      <a href="/leads/{{ lead.pk }}/update">Update your lead</a>
-      <a href="/leads/{{ lead.pk }}/delete">Delete this lead</a>
+      <a href="{% url 'leads:lead-list' %}">Home</a>
+      <a href="{% url 'leads:lead-update' lead.pk %}">Update your lead</a>
+      <a href="{% url 'leads:lead-delete' lead.pk %}">Delete this lead</a>
     </div>
   
 </body>

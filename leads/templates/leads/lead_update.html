@@ -19,7 +19,7 @@
 </head>
 <body>
   <h1>Global CRM Lead List</h1>
-  <a href="/leads">Go back</a>
+  <a href="{% url 'leads:lead-detail' lead.pk %}">Back to Details</a>
   <hr>
   <h1>Update Lead: {{ lead.first_name }} {{ lead.last_name }}</h1>
     <div class="lead">

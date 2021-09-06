@@ -20,11 +20,11 @@
 <body>
   <h1>Global CRM Lead List</h1>
   <p>Here are the currently available leads</p>
-  <a href="/leads/create/">Create a New Lead</a>
+  <a href="{% url 'leads:lead-create' %}">Create a New Lead</a>
   <ul>
     {% for lead in leads %}
     <div class="lead">
-      <li><a href="/leads/{{ lead.pk }}">{{ lead.first_name }} {{ lead.last_name }}</a>, Age: {{ lead.age }}</li>
+      <li><a href="{% url 'leads:lead-detail' lead.pk %}">{{ lead.first_name }} {{ lead.last_name }}</a>, Age: {{ lead.age }}</li>
     </div>
     {% endfor %}
   </ul>
