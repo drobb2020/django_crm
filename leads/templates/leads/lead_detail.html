@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global CRM</title>
+  <style>
+    .lead {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 6px;
+      padding-right: 6px;
+      margin-top: 10px;
+      background-color: #f6f6f6;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Global CRM Lead List</h1>
+  <p>Here are the Details of {{ lead.first_name }}</p>
+  
+    <div class="lead">
+      <p>This leads age is: {{ lead.age }}</p>
+    </div>
+    <div>
+      <a href="/leads">Go back</a>
+    </div>
+  
+</body>
+</html>
