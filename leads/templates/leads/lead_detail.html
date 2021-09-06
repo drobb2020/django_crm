@@ -23,9 +23,12 @@
   
     <div class="lead">
       <p>This leads age is: {{ lead.age }}</p>
+      <p>The assigned agent is: {{ lead.agent }}</p>
     </div>
     <div>
       <a href="/leads">Go back</a>
+      <a href="/leads/{{ lead.pk }}/update">Update your lead</a>
+      <a href="/leads/{{ lead.pk }}/delete">Delete this lead</a>
     </div>
   
 </body>

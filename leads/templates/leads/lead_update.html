@@ -19,15 +19,15 @@
 </head>
 <body>
   <h1>Global CRM Lead List</h1>
-  <p>Here are the currently available leads</p>
-  <a href="/leads/create/">Create a New Lead</a>
-  <ul>
-    {% for lead in leads %}
+  <a href="/leads">Go back</a>
+  <hr>
+  <h1>Update Lead: {{ lead.first_name }} {{ lead.last_name }}</h1>
     <div class="lead">
-      <li><a href="/leads/{{ lead.pk }}">{{ lead.first_name }} {{ lead.last_name }}</a>, Age: {{ lead.age }}</li>
+      <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+      </form>
     </div>
-    {% endfor %}
-  </ul>
-  
 </body>
 </html>
