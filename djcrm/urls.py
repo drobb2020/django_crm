@@ -8,6 +8,7 @@ from leads.views import LandingPageView, SignupView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LandingPageView.as_view(), name='landing-page'),
+    path('agents/', include('agents.urls', namespace='agents')),
     path('leads/', include('leads.urls', namespace='leads')),
     path('signup/', SignupView.as_view(), name='signup'),
     path('login/', LoginView.as_view(), name='login'),
