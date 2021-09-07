@@ -1,8 +1,12 @@
 from django.shortcuts import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Lead
 from .forms import LeadModelForm, CustomUserCreationForm
+
+
+# CRUD+L - Create, Retrieve (Read), Update, Delete, and List
 
 
 class SignupView(CreateView):
@@ -17,19 +21,19 @@ class LandingPageView(TemplateView):
   template_name = 'landing.html'
 
 
-class LeadListView(ListView):
+class LeadListView(LoginRequiredMixin, ListView):
   template_name = 'leads/lead_list.html'
   queryset = Lead.objects.all()
   context_object_name = 'leads'
 
 
-class LeadDetailView(DetailView):
+class LeadDetailView(LoginRequiredMixin, DetailView):
   template_name = 'leads/lead_detail.html'
   queryset = Lead.objects.all()
   context_object_name = 'lead'
 
 
-class LeadCreateView(CreateView):
+class LeadCreateView(LoginRequiredMixin, CreateView):
   template_name = 'leads/lead_create.html'
   form_class = LeadModelForm
   
@@ -46,7 +50,7 @@ class LeadCreateView(CreateView):
     return super(LeadCreateView, self).form_valid(form)
 
 
-class LeadUpdateView(UpdateView):
+class LeadUpdateView(LoginRequiredMixin, UpdateView):
   template_name = 'leads/lead_update.html'
   queryset = Lead.objects.all()
   form_class = LeadModelForm
@@ -55,7 +59,7 @@ class LeadUpdateView(UpdateView):
     return reverse('leads:lead-list')
 
 
-class LeadDeleteView(DeleteView):
+class LeadDeleteView(LoginRequiredMixin, DeleteView):
   template_name = 'leads/lead_delete.html'
   queryset = Lead.objects.all()
 
