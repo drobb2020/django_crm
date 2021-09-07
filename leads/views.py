@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.views  import generic
 from .models import Lead
 from .forms import LeadModelForm, CustomUserCreationForm
+from agents.mixin import OrganizerAndLoginRequiredMixin
 
 
 # CRUD+L - Create, Retrieve (Read), Update, Delete, and List
@@ -33,7 +34,7 @@ class LeadDetailView(LoginRequiredMixin, generic.DetailView):
   context_object_name = 'lead'
 
 
-class LeadCreateView(LoginRequiredMixin, generic.CreateView):
+class LeadCreateView(OrganizerAndLoginRequiredMixin, generic.CreateView):
   template_name = 'leads/lead_create.html'
   form_class = LeadModelForm
   
@@ -50,7 +51,7 @@ class LeadCreateView(LoginRequiredMixin, generic.CreateView):
     return super(LeadCreateView, self).form_valid(form)
 
 
-class LeadUpdateView(LoginRequiredMixin, generic.UpdateView):
+class LeadUpdateView(OrganizerAndLoginRequiredMixin, generic.UpdateView):
   template_name = 'leads/lead_update.html'
   queryset = Lead.objects.all()
   form_class = LeadModelForm
@@ -59,7 +60,7 @@ class LeadUpdateView(LoginRequiredMixin, generic.UpdateView):
     return reverse('leads:lead-list')
 
 
-class LeadDeleteView(LoginRequiredMixin, generic.DeleteView):
+class LeadDeleteView(OrganizerAndLoginRequiredMixin, generic.DeleteView):
   template_name = 'leads/lead_delete.html'
   queryset = Lead.objects.all()
 
