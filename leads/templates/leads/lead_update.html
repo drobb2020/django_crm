@@ -20,9 +20,9 @@
             <button class="flex mr-auto text-white bg-indigo-500 border-0 my-6 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" type="submit">Update</button>
           </form>
         </div>
-        <button href="{% url 'leads:lead-delete' lead.pk %}" class="flex mr-auto mt-3 text-white bg-indigo-500 border-0 my-6 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Delete</button>
+        <a href="{% url 'leads:lead-delete' lead.pk %}" class="flex mr-auto mt-3 w-1/2 text-white bg-indigo-500 border-0 my-6 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Delete</a>
       </div>
-      <img alt="lead" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400">
+      <img alt="lead" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://source.unsplash.com/random/400x400">
     </div>
   </div>
 </section>

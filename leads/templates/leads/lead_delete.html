@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>Global CRM Lead List</h1>
+  <a href="{% url 'leads:lead-list' %}">Go back</a>
+  <hr>
+  <p>Are you sure you want to delete this Lead?</p>
+    <div class="lead">
+      <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+{% endblock content %}
