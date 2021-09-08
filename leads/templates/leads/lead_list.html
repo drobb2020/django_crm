@@ -9,6 +9,10 @@
         <h1 class="text-4xl text-gray-800">Leads</h1>
       </div>
       <div>
+        <a href="{% url 'leads:category-list' %}" class="text-gray-500 hover:text-blue-500">View Categories
+        </a>
+      </div>
+      <div>
         {% if request.user.is_organizer %}
         <a href="{% url 'leads:lead-create' %}" class="text-gray-500 hover:text-blue-500">Create a New Lead
         </a>
