@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.views  import generic
 from .models import Lead
-from .forms import LeadModelForm, CustomUserCreationForm
+from .forms import LeadModelForm, CustomUserCreationForm, AssignAgentForm
 from agents.mixin import OrganizerAndLoginRequiredMixin
 
 
@@ -30,9 +30,9 @@ class LeadListView(LoginRequiredMixin, generic.ListView):
     user = self.request.user
     # Initial queryset of leads for an organizer
     if user.is_organizer:
-      queryset = Lead.objects.filter(organization=user.userprofile, agent__isnull=True)
+      queryset = Lead.objects.filter(organization=user.userprofile, agent__isnull=False)
     else:
-      queryset = Lead.objects.filter(organization=user.agent.organization, agent__isnull=True)
+      queryset = Lead.objects.filter(organization=user.agent.organization, agent__isnull=False)
       # agent filter for current logged in user
       queryset = queryset.filter(agent__user=user)
     return queryset
@@ -102,3 +102,25 @@ class LeadDeleteView(OrganizerAndLoginRequiredMixin, generic.DeleteView):
 
   def get_success_url(self):
     return reverse('leads:lead-list')
+
+
+class AssignAgentView(OrganizerAndLoginRequiredMixin, generic.FormView):
+  template_name = 'leads/assign_agent.html'
+  form_class = AssignAgentForm
+
+  def get_form_kwargs(self, **kwargs):
+    kwargs = super(AssignAgentView, self).get_form_kwargs(**kwargs)
+    kwargs.update({
+      'request': self.request
+    })
+    return kwargs
+
+  def get_success_url(self):
+    return reverse('leads:lead-list')
+
+  def form_valid(self, form):
+    agent = form.cleaned_data['agent']
+    lead = Lead.objects.get(id=self.kwargs['pk'])
+    lead.agent = agent
+    lead.save()
+    return super(AssignAgentView, self).form_valid(form)
