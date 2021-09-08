@@ -1,13 +1,21 @@
 {% extends "base.html" %}
+{% load tailwind_filters %}
 
 {% block content %}
   
-  <form action="" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-    <hr>
-    <a href="{% url 'reset-password' %}">Forgot your password?</a>
-  </form>
+  <div class="max-w-lg mx-auto">
+    <div class="py-3 my-3 border-b border-gray-500">
+      <a class="hover:text-blue-500" href="{% url 'signup' %}">Need an Account??</a>
+    </div>
+    <h1 class="text-gray-900 text-3xl title-font font-medium pt-4 mb-4">Global CRM Login</h1>
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded-md text-white">Login</button>
+    </form>
+    <div class="py-3 my-3 border-t border-gray-500">
+      <a class="hover:text-blue-500" href="{% url 'reset-password' %}">Forgot your password?</a>
+    </div>
+  </div>
 
 {% endblock content %}

@@ -9,10 +9,9 @@
         <h2 class="text-sm title-font text-gray-500 tracking-widest">LEAD</h2>
         <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{{lead.first_name}} {{lead.last_name}}</h1>
         <div class="flex mb-4">
-          <a class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1">Overview</a>
+          <a href="" class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1">Overview</a>
+          <a href="{% url 'leads:lead-category-update' lead.pk %}" class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">Category</a>
           <a href="{% url 'leads:lead-update' lead.pk %}" class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">Update Details</a>
-          <a href="#" class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">Review</a>
-          
         </div>
         <p class="leading-relaxed mb-4">To be added at a later date!</p>
         <div class="flex border-t border-gray-200 py-2">

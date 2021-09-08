@@ -38,8 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Project Apps
     'leads.apps.LeadsConfig',
     'agents.apps.AgentsConfig',
+
+    # Third Party Applications
+    'crispy_forms',
+    'crispy_tailwind',
 ]
 
 MIDDLEWARE = [
@@ -126,6 +131,8 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = 'static_root'
 
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -135,3 +142,7 @@ AUTH_USER_MODEL = 'leads.User'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_REDIRECT_URL = '/leads'
 LOGIN_URL = '/login'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+CRISPY_TEMPLATE_PACK = "tailwind"
