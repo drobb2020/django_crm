@@ -2,7 +2,7 @@ from django.shortcuts import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.views  import generic
-from .models import Lead
+from .models import Lead, Category
 from .forms import LeadModelForm, CustomUserCreationForm, AssignAgentForm
 from agents.mixin import OrganizerAndLoginRequiredMixin
 
@@ -124,3 +124,30 @@ class AssignAgentView(OrganizerAndLoginRequiredMixin, generic.FormView):
     lead.agent = agent
     lead.save()
     return super(AssignAgentView, self).form_valid(form)
+
+
+class CategoryListView(OrganizerAndLoginRequiredMixin, generic.ListView):
+  template_name = 'leads/category_list.html'
+  context_object_name = 'category_list'
+
+  def get_context_data(self, **kwargs):
+    context = super(CategoryListView, self).get_context_data(**kwargs)
+    user = self.request.user
+    if user.is_organizer:
+      queryset = Lead.objects.filter(organization=user.userprofile)
+    else:
+      queryset = Lead.objects.filter(organization=user.agent.organization)
+
+    context.update({
+      'unassigned_lead_count': queryset.filter(category__isnull=True).count()
+    })
+    return context
+
+  def get_queryset(self):
+    user = self.request.user
+    # Initial queryset of leads for an organizer
+    if user.is_organizer:
+      queryset = Category.objects.filter(organization=user.userprofile)
+    else:
+      queryset = Category.objects.filter(organization=user.agent.organization)
+    return queryset
