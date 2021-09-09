@@ -2,9 +2,10 @@
 {% load tailwind_filters %}
 
 {% block content %}
+
   <div class="max-w-lg mx-auto pb-4">
     <div class="py-3 my-3 border-b border-gray-500">
-      <a href="{% url 'agents:agent-list' %}"> Return to Agents List</a>
+      <a class="hover:text-blue-500" href="{% url 'agents:agent-list' %}"> Return to Agents List</a>
     </div>
     <h1 class="text-gray-900 text-3xl title-font font-medium pt-4 mb-4">Create a new agent</h1>
     <form action="" method="POST">
