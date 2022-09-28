@@ -79,16 +79,13 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-This is a blank template for new projects. To avoid retyping too much info. **Do a search and replace with your text editor for the following:**
-`drobb2020`, `django_crm`, `DavidRobb2`, `drobb2011@gmail.com`, `Python Django CRM Project`, `A CRM system built with Django following a YouTube Video series by JustDjango.`
+This project was a YouTube tutorial to hone my django skills.
 
 ### Built With
 
-- []()
-- []()
-- []()
+- [Python](https://www.python.org/)
+- [Django](https://www.djangoproject.com/)
+- [Tailwindcss](https://tailwindcss.com/)
 
 <!-- GETTING STARTED -->
 
@@ -98,13 +95,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-
-  ```sh
-  npm install npm@latest -g
-  ```
+You will need Python 3.6 or newer installed to run this project.
 
 ### Installation
 
@@ -114,19 +105,19 @@ This is an example of how to list things you need to use the software and how to
    git clone https://github.com/drobb2020/django_crm.git
    ```
 
-2. Install NPM packages
+2. Create a virtual environment
 
    ```sh
-   npm install
+   python -m venv venv
    ```
 
+3. Install the required modules
+
+  ```sh
+  pip install -r requirements.txt
+  ```
+
 <!-- USAGE EXAMPLES -->
-
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 
@@ -161,15 +152,6 @@ David Robb - [@DavidRobb2](https://twitter.com/DavidRobb2) - drobb2011@gmail.com
 Project Link: [https://github.com/drobb2020/django_crm](https://github.com/drobb2020/django_crm)
 
 <!-- ACKNOWLEDGEMENTS -->
-
-## Acknowledgements
-
-- []()
-- []()
-- []()
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/drobb2020/repo.svg?style=for-the-badge
 [contributors-url]: https://github.com/drobb2020/repo/graphs/contributors
