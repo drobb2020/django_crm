@@ -79,6 +79,10 @@
 
 ## About The Project
 
+<a href="https://github.com/drobb2020/django_crm">
+    <img src="images/screenshot.png" alt="Global CRM" width="700">
+</a>
+
 This project was a YouTube tutorial to hone my django skills.
 
 ### Built With
@@ -153,15 +157,15 @@ Project Link: [https://github.com/drobb2020/django_crm](https://github.com/drobb
 
 <!-- ACKNOWLEDGEMENTS -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/drobb2020/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/drobb2020/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/drobb2020/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/drobb2020/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/drobb2020/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/drobb2020/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/drobb2020/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/drobb2020/repo/issues
-[license-shield]: https://img.shields.io/github/license/drobb2020/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/drobb2020/django_crm.svg?style=for-the-badge
+[contributors-url]: https://github.com/drobb2020/django_crm/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/drobb2020/django_crm.svg?style=for-the-badge
+[forks-url]: https://github.com/drobb2020/django_crm/network/members
+[stars-shield]: https://img.shields.io/github/stars/drobb2020/django_crm.svg?style=for-the-badge
+[stars-url]: https://github.com/drobb2020/django_crm/stargazers
+[issues-shield]: https://img.shields.io/github/issues/drobb2020/django_crm.svg?style=for-the-badge
+[issues-url]: https://github.com/drobb2020/django_crm/issues
+[license-shield]: https://img.shields.io/github/license/drobb2020/django_crm.svg?style=for-the-badge
 [license-url]: https://github.com/drobb2020/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/david-robb-42436a20/
